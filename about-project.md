@@ -1,101 +1,113 @@
-# Maker - About the Project
+# Maker - Sobre o Projeto
 
-## 1. Visao geral
+## 1. Visão Geral
 
-O Maker e uma ferramenta interna de redacao para transformar links de noticias em layouts pre-definidos para publicacao no Instagram. O sistema deve rodar localmente, preferencialmente como uma aplicacao Electron, coletar informacoes de uma noticia, aplicar esses dados em templates visuais feitos em HTML/CSS e gerar imagens prontas para uso em redes sociais.
+O Maker é uma ferramenta interna de redação para transformar links de notícias em layouts pré-definidos para publicação no Instagram. O sistema deve rodar localmente, preferencialmente como uma aplicação Electron, coletar informações de uma notícia, aplicar esses dados em templates visuais feitos em HTML/CSS e gerar imagens prontas para uso em redes sociais.
 
-## 2. Objetivo do produto
+## 2. Objetivo do Produto
 
-Permitir que jornalistas que trabalham na distribuicao de noticias para redes sociais informem a URL de uma noticia, selecionem um layout pre-definido, editem os campos quando necessario, visualizem uma previa da arte gerada e baixem a imagem final para publicacao no Instagram.
+Permitir que jornalistas responsáveis pela distribuição de notícias em redes sociais informem a URL de uma notícia, selecionem um layout pré-definido, editem os campos quando necessário, visualizem uma prévia da arte gerada e baixem a imagem final para publicação no Instagram.
 
-## 3. Publico-alvo
+## 3. Público-Alvo
 
-Jornalistas que trabalham na distribuicao de noticias para redes sociais dentro de uma redacao jornalistica. O uso previsto e interno, restrito a equipe da redacao.
+Jornalistas que trabalham na distribuição de notícias para redes sociais dentro de uma redação jornalística. O uso previsto é interno, restrito à equipe da redação.
 
-## 4. Problema que o sistema resolve
+## 4. Problema que o Sistema Resolve
 
-O processo manual de criacao de artes para redes sociais a partir de noticias pode ser demorado, repetitivo e sujeito a inconsistencias visuais. O Maker busca automatizar parte desse processo, coletando os dados da noticia, aplicando esses dados em layouts pre-definidos e gerando imagens prontas para publicacao no Instagram.
+O processo manual de criação de artes para redes sociais a partir de notícias pode ser demorado, repetitivo e sujeito a inconsistências visuais. O Maker busca automatizar parte desse processo, coletando os dados da notícia, aplicando esses dados em layouts pré-definidos e gerando imagens prontas para publicação no Instagram.
 
-## 5. Escopo inicial
+## 5. Escopo Inicial
 
 O sistema deve contemplar:
 
-- Coleta de metadados de links de sites de noticia.
+- Coleta de metadados de links de sites de notícia.
 - Uso de templates em HTML e CSS preenchidos automaticamente com os metadados coletados.
-- Geracao de imagem PNG a partir do template usando a biblioteca `html-to-image`.
-- Selecao de template na tela inicial.
-- Uso inicial de 5 templates ja prontos em HTML e CSS.
-- Interface para editar manualmente os campos da arte quando necessario.
-- Preview da arte antes da criacao final.
+- Geração de imagem PNG a partir do template usando a biblioteca `html-to-image`.
+- Abertura direta na lista de layouts.
+- Seleção de layout por cards.
+- Uso inicial de 5 templates prontos em HTML e CSS.
+- Interface para edição manual dos campos da arte quando necessário.
+- Preview da arte antes da geração final.
 - Download da imagem gerada.
-- Selecao de imagem local quando a imagem da noticia nao for suficiente ou nao for coletada.
-- Selecao de cor/tema para templates que tenham variacoes visuais.
-- Geracao de post para feed do Instagram no formato 1080x1440.
-- Geracao de story para Instagram.
-- Geracao simultanea de mais de um formato quando o usuario selecionar multiplos layouts.
+- Seleção de imagem local quando a imagem da notícia não for suficiente ou não for coletada.
+- Seleção de tema/cor para templates que tenham variações visuais.
+- Modo claro e modo escuro na interface do aplicativo.
+- Geração de post para feed do Instagram no formato 1080x1440.
+- Geração de story para Instagram no formato 1080x1920.
+- Geração simultânea de mais de um formato quando o usuário selecionar múltiplos layouts.
+- Validação campo a campo dos dados obrigatórios.
 
-## 6. Fora de escopo
+## 6. Fora de Escopo
 
-- Publicacao automatica em redes sociais.
-- Edicao avancada de imagem no estilo Photoshop/Figma.
-- Criacao de artes sem vinculacao com uma URL de noticia, salvo se isso for definido como necessidade futura.
-- Historico completo de artes geradas, salvo se for definido como requisito da primeira versao.
-- Builder visual de templates na primeira versao.
-- Login e autenticacao na primeira versao.
+- Publicação automática em redes sociais.
+- Edição avançada de imagem no estilo Photoshop/Figma.
+- Criação de artes sem dados manuais ou sem campos obrigatórios preenchidos.
+- Histórico completo de artes geradas.
+- Builder visual de templates na primeira versão.
+- Login e autenticação na primeira versão.
+- Tela de configuração na primeira versão.
+- Área de ajuda, tutorial ou documentação dentro da interface na primeira versão.
+- Botão para limpar todos os campos e recomeçar.
+- Recorte manual de imagem.
+- Arrastar e soltar imagem local.
+- Exportação em formatos diferentes de PNG.
 
-## 7. Atores do sistema
+## 7. Atores do Sistema
 
-### Ator principal - Usuario criador de arte
+### Ator principal - Usuário criador de arte
 
-Jornalista responsavel por transformar uma noticia em uma arte para redes sociais. Esse usuario acessa o sistema, escolhe um template, informa a URL, revisa o preview e baixa o PNG.
+Jornalista responsável por transformar uma notícia em uma arte para redes sociais. Esse usuário acessa o sistema, escolhe um layout, informa a URL ou preenche os campos manualmente, revisa o preview e baixa o PNG.
 
-### Ator secundario - Administrador de templates
+### Ator secundário - Administrador de templates
 
-Pessoa responsavel por criar, configurar ou manter os templates disponiveis no sistema. Esse ator pode ser o proprio desenvolvedor ou uma pessoa da equipe com permissao para configurar modelos.
+Pessoa responsável por criar, configurar ou manter os templates disponíveis no sistema. Esse ator pode ser o próprio desenvolvedor ou uma pessoa da equipe com permissão para configurar modelos.
 
-### Sistema externo - Site de noticia
+### Sistema externo - Site de notícia
 
-Fonte de onde serao coletados os metadados da noticia, como titulo, imagem, editoria, autor e data.
+Fonte de onde serão coletados os metadados da notícia, como título, imagem, editoria, autor e data.
 
-## 8. Casos de uso
+## 8. Casos de Uso
 
-### UC01 - Gerar arte para Instagram a partir de uma noticia
+### UC01 - Gerar arte para Instagram a partir de uma notícia
 
-Ator principal: usuario criador de arte.
+Ator principal: usuário criador de arte.
 
 Fluxo principal:
 
-1. O usuario acessa a tela inicial.
-2. O usuario escolhe diretamente um ou mais cards de layout, como "Feed - Template 1" ou "Story - Template 2".
-3. Cada card selecionado representa um formato e um template especifico.
-4. O usuario informa a URL de uma noticia.
-5. O sistema inicia automaticamente a coleta dos metadados da noticia.
-6. O sistema exibe um indicador de carregamento durante a coleta.
-7. O sistema monta o preview com template, textos, imagem, background, tema e logo.
-8. O sistema preenche os layouts selecionados com os mesmos dados iniciais coletados da noticia.
-9. O usuario edita manualmente os campos quando necessario.
-10. O sistema permite ajustes independentes de texto e imagem em cada layout selecionado.
-11. O usuario seleciona um layout no grid de previews para coloca-lo em foco.
-12. O sistema exibe no painel de edicao os campos do layout selecionado.
-13. O sistema atualiza o preview com as alteracoes.
-14. O usuario pode duplicar um layout para testar variacoes de texto, tema ou imagem.
-15. O usuario clica em criar.
-16. O sistema valida se todos os campos obrigatorios foram preenchidos.
-17. O sistema gera a arte em PNG.
-18. O sistema aplica a nomenclatura definida para o arquivo.
-19. O sistema baixa a imagem gerada.
+1. O usuário abre o aplicativo.
+2. O sistema exibe diretamente a lista de layouts.
+3. O usuário escolhe um ou mais cards de layout, como `Feed - Template 1` ou `Story - Template 2`.
+4. Cada card selecionado representa um formato e um template específico.
+5. O usuário informa a URL de uma notícia.
+6. O sistema inicia automaticamente a coleta dos metadados da notícia.
+7. O sistema exibe um indicador de carregamento durante a coleta.
+8. O sistema preenche os layouts selecionados com os dados coletados da notícia.
+9. O sistema monta o preview com template, textos, imagem, tema e logo.
+10. O usuário edita manualmente os campos quando necessário.
+11. O sistema permite ajustes independentes de texto e imagem em cada layout selecionado.
+12. O usuário seleciona um layout no grid de previews para colocá-lo em foco.
+13. O sistema exibe no painel de edição os campos do layout selecionado.
+14. O sistema atualiza o preview com as alterações.
+15. O usuário pode duplicar um layout para testar variações de texto, tema ou imagem.
+16. O usuário clica em criar.
+17. O sistema valida campo a campo se todos os campos obrigatórios foram preenchidos.
+18. O sistema gera a arte em PNG.
+19. O sistema aplica a nomenclatura definida para o arquivo.
+20. O sistema baixa a imagem gerada na pasta padrão de downloads.
+21. O sistema exibe a mensagem `Imagem baixada com sucesso`.
+22. O usuário pode abrir a pasta de downloads.
 
 Fluxos alternativos:
 
-- Se a URL for invalida, o sistema deve informar que nao conseguiu reconhecer a noticia.
-- Se os metadados nao forem encontrados, o sistema deve informar quais campos estao ausentes.
-- Se a coleta automatica falhar, o sistema deve exibir a mensagem: "Nao foi possivel coletar os dados. Preencha os campos manualmente."
-- Se a coleta automatica falhar, o campo de URL deve ser limpo para que o usuario possa colar outra URL.
-- Se a URL tiver espacos ou texto extra, o sistema deve apontar erro, sem tentar corrigir automaticamente.
-- Se a imagem principal nao puder ser carregada, o sistema deve permitir substituir ou preencher manualmente a imagem antes da geracao.
-- Se o texto ultrapassar o limite visual do template, o sistema nao deve cortar ou ajustar automaticamente; o usuario deve identificar o problema no preview e editar manualmente.
-- Se algum campo obrigatorio estiver pendente, o sistema nao deve permitir gerar a imagem ate que o usuario preencha o campo manualmente.
-- Se o usuario deixar a URL vazia, o sistema deve permitir gerar a imagem desde que todos os campos obrigatorios sejam preenchidos manualmente.
+- Se a URL for inválida, o sistema deve apontar erro.
+- Se os metadados não forem encontrados, o sistema deve informar os campos pendentes.
+- Se a coleta automática falhar, o sistema deve exibir a mensagem: `Não foi possível coletar os dados. Preencha os campos manualmente.`
+- Se a coleta automática falhar, o campo de URL deve ser limpo para que o usuário possa colar outra URL.
+- Se a URL tiver espaços ou texto extra, o sistema deve apontar erro, sem tentar corrigir automaticamente.
+- Se a imagem principal não puder ser carregada, o sistema deve permitir substituir ou preencher manualmente a imagem antes da geração.
+- Se o texto ultrapassar o limite visual do template, o sistema não deve cortar ou ajustar automaticamente; o usuário deve identificar o problema no preview e editar manualmente.
+- Se algum campo obrigatório estiver pendente, o sistema não deve permitir gerar a imagem até que o usuário preencha o campo.
+- Se o usuário deixar a URL vazia, o sistema deve permitir gerar a imagem desde que todos os campos obrigatórios sejam preenchidos manualmente.
 
 ### UC02 - Configurar template
 
@@ -103,532 +115,582 @@ Ator principal: administrador de templates.
 
 Fluxo principal:
 
-1. O administrador acessa a area ou estrutura de configuracao de templates.
-2. O administrador define nome, dimensao, campos, layout e variacoes de cor do template.
-3. O sistema salva ou disponibiliza o template para uso.
-4. O template passa a aparecer na lista de opcoes para o usuario criador de arte.
+1. O administrador edita os arquivos do projeto responsáveis pelos templates.
+2. O administrador define nome, dimensão, campos, layout, logo e variações de tema do template.
+3. O sistema passa a disponibilizar o template na lista de layouts.
 
-Observacao: o builder visual de templates fica previsto como funcionalidade futura. Na primeira versao, os templates serao criados diretamente em HTML e CSS.
+Observação: o builder visual de templates fica previsto como funcionalidade futura. Na primeira versão, os templates serão criados e configurados diretamente nos arquivos do projeto.
 
-## 9. Requisitos funcionais
+## 9. Requisitos Funcionais
 
-### RF01 - Selecionar template
+### RF01 - Abrir diretamente na lista de layouts
 
-O sistema deve permitir que o usuario escolha um ou mais layouts a partir de cards na tela inicial. Cada card deve representar uma combinacao de formato e template.
+O sistema deve abrir diretamente na lista de layouts, sem uma tela inicial anterior.
 
-### RF02 - Escolher formato de publicacao
+### RF02 - Selecionar layout
 
-O sistema deve permitir que o usuario escolha layouts para os formatos de feed e story para Instagram.
+O sistema deve permitir que o usuário escolha um ou mais layouts a partir de cards. Cada card deve representar uma combinação de formato e template.
 
-### RF03 - Pesquisar e filtrar layouts
+### RF03 - Escolher formato de publicação
+
+O sistema deve permitir que o usuário escolha layouts para os formatos de feed e story do Instagram.
+
+### RF04 - Pesquisar e filtrar layouts
 
 O sistema deve permitir pesquisar e filtrar os cards de layout por formato e tema.
 
-### RF04 - Informar URL da noticia
+### RF05 - Informar URL da notícia
 
-O sistema deve permitir que o usuario informe a URL de uma noticia publicada em um site jornalistico.
+O sistema deve permitir que o usuário informe a URL de uma notícia publicada em um site jornalístico.
 
-### RF05 - Coletar metadados da noticia
+### RF06 - Coletar metadados da notícia
 
-O sistema deve coletar os metadados necessarios da noticia informada, como titulo, subtitulo, imagem principal, editoria, autor, data e outros campos que forem definidos como necessarios.
+O sistema deve coletar os metadados necessários da notícia informada, como título, subtítulo, imagem principal, editoria, autor, data e outros campos que forem definidos como necessários.
 
-### RF06 - Coletar metadados automaticamente
+### RF07 - Coletar metadados automaticamente
 
-O sistema deve iniciar a coleta dos metadados automaticamente quando o usuario informar ou colar uma URL.
+O sistema deve iniciar a coleta dos metadados automaticamente quando o usuário informar ou colar uma URL.
 
-### RF07 - Preencher tag automaticamente
+### RF08 - Preencher tag automaticamente
 
-O sistema deve preencher o campo `tag` automaticamente com a editoria ou categoria da noticia quando essa informacao estiver disponivel.
+O sistema deve preencher o campo `tag` automaticamente com a editoria ou categoria da notícia quando essa informação estiver disponível.
 
-### RF08 - Exibir carregamento da coleta
+### RF09 - Exibir carregamento da coleta
 
-O sistema deve exibir um indicador de carregamento enquanto busca os metadados da noticia.
+O sistema deve exibir um indicador de carregamento enquanto busca os metadados da notícia.
 
-### RF09 - Tratar falha na coleta
+### RF10 - Tratar falha na coleta
 
-O sistema deve exibir a mensagem "Nao foi possivel coletar os dados. Preencha os campos manualmente." quando nao conseguir coletar os metadados da URL.
+O sistema deve exibir a mensagem `Não foi possível coletar os dados. Preencha os campos manualmente.` quando não conseguir coletar os metadados da URL.
 
-### RF10 - Limpar URL apos erro de coleta
+### RF11 - Limpar URL após erro de coleta
 
-Quando a coleta automatica falhar, o sistema deve limpar o campo de URL para que o usuario possa colar outra URL.
+Quando a coleta automática falhar, o sistema deve limpar o campo de URL para que o usuário possa colar outra URL.
 
-### RF11 - Permitir preenchimento manual sem URL
+### RF12 - Permitir preenchimento manual sem URL
 
-O sistema deve permitir gerar a imagem sem URL quando o usuario deixar o campo de URL vazio, desde que todos os campos obrigatorios sejam preenchidos manualmente.
+O sistema deve permitir gerar a imagem sem URL quando o usuário deixar o campo de URL vazio, desde que todos os campos obrigatórios sejam preenchidos manualmente.
 
-### RF12 - Preencher template automaticamente
+### RF13 - Preencher template automaticamente
 
-O sistema deve preencher o template selecionado com os metadados coletados da noticia.
+O sistema deve preencher o template selecionado com os metadados coletados da notícia.
 
-### RF13 - Editar campos manualmente
+### RF14 - Editar campos manualmente
 
-O sistema deve permitir que o usuario edite manualmente os campos da arte antes da geracao, incluindo tag, titulo, subtitulo e imagem.
+O sistema deve permitir que o usuário edite manualmente os campos da arte antes da geração, incluindo `tag`, título, subtítulo e imagem.
 
-### RF14 - Editar campos por layout
+### RF15 - Editar campos por layout
 
-O sistema deve permitir que o usuario ajuste texto e imagem separadamente em cada layout selecionado.
+O sistema deve permitir que o usuário ajuste texto e imagem separadamente em cada layout selecionado.
 
-### RF15 - Selecionar imagem local
+### RF16 - Selecionar imagem local
 
-O sistema deve permitir que o usuario selecione uma imagem local pelo explorador de arquivos para substituir ou preencher a imagem da noticia.
+O sistema deve permitir que o usuário selecione uma imagem local pelo explorador de arquivos para substituir ou preencher a imagem da notícia.
 
-### RF16 - Encaixar imagem no template
+### RF17 - Encaixar imagem no template
 
-O sistema deve encaixar a imagem selecionada no template, sem oferecer ferramenta de recorte manual na primeira versao.
+O sistema deve encaixar a imagem selecionada no template, sem oferecer ferramenta de recorte manual na primeira versão.
 
-### RF17 - Exibir preview da arte
+### RF18 - Exibir preview da arte
 
-O sistema deve exibir uma previa da arte antes da geracao final.
+O sistema deve exibir uma prévia da arte antes da geração final.
 
-### RF18 - Atualizar preview apos edicao
+### RF19 - Atualizar preview após edição
 
-O sistema deve atualizar o preview da arte quando o usuario alterar manualmente algum campo.
+O sistema deve atualizar o preview da arte quando o usuário alterar manualmente algum campo.
 
-### RF19 - Exibir previews em grid
+### RF20 - Exibir previews em grid
 
-O sistema deve exibir os layouts selecionados em um grid de previews para permitir comparacao visual rapida.
+O sistema deve exibir os layouts selecionados em um grid de previews para permitir comparação visual rápida.
 
-### RF20 - Destacar layout selecionado
+### RF21 - Destacar layout selecionado
 
-O sistema deve permitir selecionar um layout no grid, aplicando estado de foco ou destaque visual para indicar qual layout esta sendo editado.
+O sistema deve permitir selecionar um layout no grid, aplicando estado de foco ou destaque visual para indicar qual layout está sendo editado.
 
-### RF21 - Editar layout em painel unico
+### RF22 - Editar layout em painel único
 
-O sistema deve exibir os campos editaveis em um painel unico, atualizado dinamicamente conforme o layout selecionado no grid.
+O sistema deve exibir os campos editáveis em um painel único, atualizado dinamicamente conforme o layout selecionado no grid.
 
-### RF22 - Duplicar layout selecionado
+### RF23 - Recolher painel de edição
 
-O sistema deve permitir duplicar um layout selecionado para testar variacoes de texto, tema ou imagem. A duplicacao deve criar uma nova instancia independente no grid de previews.
+O sistema deve permitir que o painel de edição seja recolhido.
 
-### RF23 - Nomear copia de layout automaticamente
+### RF24 - Duplicar layout selecionado
 
-O sistema deve atribuir um nome automatico para layouts duplicados, como `Template 1 - copia` ou `Template 1 - variacao 2`.
+O sistema deve permitir duplicar um layout selecionado para testar variações de texto, tema ou imagem. A duplicação deve criar uma nova instância independente no grid de previews.
 
-### RF24 - Remover instancia duplicada
+### RF25 - Nomear cópia de layout automaticamente
 
-O sistema deve permitir que o usuario remova do grid uma instancia duplicada que nao deseja mais usar.
+O sistema deve atribuir um nome automático para layouts duplicados, como `Template 1 - cópia` ou `Template 1 - variação 2`.
 
-### RF25 - Permitir selecao de cor/tema
+### RF26 - Remover instância duplicada
 
-O sistema deve permitir que o usuario selecione uma variacao de cor quando o template possuir mais de uma opcao visual.
+O sistema deve permitir que o usuário remova do grid uma instância duplicada que não deseja mais usar.
 
-### RF26 - Validar campos obrigatorios
+### RF27 - Permitir seleção de tema
 
-O sistema deve verificar se os campos obrigatorios foram preenchidos antes de permitir a geracao da imagem.
+O sistema deve permitir que o usuário selecione uma variação de tema quando o template possuir mais de uma opção visual.
 
-### RF27 - Gerar imagem PNG
+### RF28 - Validar campos obrigatórios
+
+O sistema deve verificar campo a campo se os campos obrigatórios foram preenchidos antes de permitir a geração da imagem.
+
+### RF29 - Exibir erros campo a campo
+
+O sistema deve exibir erros de validação diretamente nos campos que precisam de correção.
+
+### RF30 - Gerar imagem PNG
 
 O sistema deve gerar uma imagem PNG a partir do layout HTML/CSS usando a biblioteca `html-to-image`.
 
-### RF28 - Gerar multiplos formatos simultaneamente
+### RF31 - Gerar múltiplos formatos simultaneamente
 
-O sistema deve permitir que o usuario selecione mais de um formato/layout e gere as imagens selecionadas em uma unica acao, desde que todos os previews selecionados estejam validos.
+O sistema deve permitir que o usuário selecione mais de um formato/layout e gere as imagens selecionadas em uma única ação, desde que todos os previews selecionados estejam válidos.
 
-### RF29 - Desmarcar layout antes da geracao
+### RF32 - Desmarcar layout antes da geração
 
-O sistema deve permitir que o usuario remova da geracao um formato/layout que nao ficou adequado no preview, mantendo os demais selecionados.
+O sistema deve permitir que o usuário remova da geração um formato/layout que não ficou adequado no preview, mantendo os demais selecionados.
 
-### RF30 - Baixar imagem gerada
+### RF33 - Baixar imagem gerada
 
-O sistema deve permitir que o usuario baixe a imagem gerada.
+O sistema deve permitir que o usuário baixe a imagem gerada.
 
-### RF31 - Baixar arquivos separados
+### RF34 - Baixar arquivos separados
 
 Quando mais de uma imagem for gerada, o sistema deve baixar arquivos separados, um para cada formato/layout selecionado.
 
-### RF32 - Aplicar nomenclatura padrao ao arquivo
+### RF35 - Aplicar nomenclatura padrão ao arquivo
 
-O sistema deve nomear automaticamente a imagem gerada seguindo o padrao `{formato}-{titulo-em-slug}-{data}.png`.
+O sistema deve nomear automaticamente a imagem gerada seguindo o padrão `{formato}-{titulo-em-slug}-{data}.png`.
 
-### RF33 - Exibir mensagem de sucesso
+### RF36 - Exibir mensagem de sucesso
 
-O sistema deve exibir a mensagem "Imagem baixada com sucesso" apos o download das imagens.
+O sistema deve exibir a mensagem `Imagem baixada com sucesso` após o download das imagens.
 
-### RF34 - Abrir pasta de downloads
+### RF37 - Abrir pasta de downloads
 
-O sistema deve permitir que o usuario abra a pasta de downloads apos gerar as imagens.
+O sistema deve permitir que o usuário abra a pasta de downloads após gerar as imagens.
 
-### RF35 - Usar templates em HTML e CSS
+### RF38 - Usar templates em HTML e CSS
 
 O sistema deve permitir o uso de templates criados em HTML e CSS, para que diferentes layouts possam ser adicionados ao projeto.
 
-### RF36 - Aplicar tema visual do template
+### RF39 - Aplicar tema visual do template
 
-O sistema deve permitir que o usuario escolha uma variacao visual pre-definida do template, aplicando o arquivo CSS correspondente ao tema selecionado.
+O sistema deve permitir que o usuário escolha uma variação visual pré-definida do template, aplicando o tema correspondente.
 
-### RF37 - Builder de template
+### RF40 - Alternar modo claro e escuro
+
+O sistema deve permitir alternar a interface do aplicativo entre modo claro e modo escuro.
+
+### RF41 - Configurar templates por arquivos do projeto
+
+O sistema deve permitir que templates e variações sejam definidos nos arquivos do projeto, sem exigir uma tela de configuração na primeira versão.
+
+### RF42 - Builder de template
 
 O sistema deve oferecer uma forma de criar, configurar ou editar templates em uma fase futura do projeto.
 
-## 10. Requisitos nao funcionais
+## 10. Requisitos Não Funcionais
 
-### RNF01 - Execucao local ou simplificada
+### RNF01 - Execução local
 
-O sistema deve funcionar localmente, preferencialmente como uma aplicacao Electron, sem depender de infraestrutura complexa para a primeira versao.
+O sistema deve funcionar localmente, preferencialmente como uma aplicação Electron, sem depender de infraestrutura complexa para a primeira versão.
 
 ### RNF02 - Desempenho na coleta de dados
 
-O sistema deve coletar os metadados da noticia em tempo adequado para uso operacional. Meta inicial: retornar os dados em ate 3 segundos em uma conexao estavel, quando a pagina de origem estiver disponivel.
+O sistema deve coletar os metadados da notícia em tempo adequado para uso operacional. Meta inicial: retornar os dados em até 3 segundos em uma conexão estável, quando a página de origem estiver disponível.
 
-### RNF03 - Desempenho na geracao da imagem
+### RNF03 - Desempenho na geração da imagem
 
-O sistema deve gerar o PNG em tempo adequado para uso operacional. Meta inicial: gerar a imagem em ate 5 segundos apos o clique em criar, considerando um template ja carregado.
+O sistema deve gerar o PNG em tempo adequado para uso operacional. Meta inicial: gerar a imagem em até 5 segundos após o clique em criar, considerando um template já carregado.
 
 ### RNF04 - Usabilidade
 
-A interface deve ser simples o suficiente para que um usuario consiga gerar uma imagem seguindo o fluxo principal sem precisar alterar codigo ou manipular arquivos manualmente.
+A interface deve ser simples o suficiente para que um usuário consiga gerar uma imagem seguindo o fluxo principal sem precisar alterar código ou manipular arquivos manualmente.
 
 ### RNF05 - Acessibilidade
 
-O sistema deve considerar boas praticas de acessibilidade, incluindo contraste adequado, navegacao por teclado e textos compreensiveis para leitores de tela nos controles principais.
+O sistema deve considerar boas práticas de acessibilidade, incluindo contraste adequado, navegação por teclado e textos compreensíveis para leitores de tela nos controles principais.
 
 ### RNF06 - Qualidade visual da imagem
 
-O PNG gerado deve preservar a fidelidade visual do template selecionado, mantendo proporcao, fontes, cores, imagens e posicionamento dos elementos conforme o preview.
+O PNG gerado deve preservar a fidelidade visual do template selecionado, mantendo proporção, fontes, cores, imagens e posicionamento dos elementos conforme o preview.
 
 ### RNF07 - Manutenibilidade dos templates
 
-Os templates devem ser organizados de forma que novas artes possam ser adicionadas ou ajustadas com baixo esforco, sem exigir alteracoes profundas no funcionamento principal do sistema.
+Os templates devem ser organizados de forma que novas artes possam ser adicionadas ou ajustadas com baixo esforço, sem exigir alterações profundas no funcionamento principal do sistema.
 
 ### RNF08 - Compatibilidade
 
-O sistema deve funcionar como aplicacao Electron em Windows, macOS e Linux. Caso exista uma versao web no futuro, os navegadores suportados devem ser definidos posteriormente.
+O sistema deve funcionar como aplicação Electron em Windows, macOS e Linux. Caso exista uma versão web no futuro, os navegadores suportados devem ser definidos posteriormente.
 
-### RNF09 - Confiabilidade da exportacao
+### RNF09 - Confiabilidade da exportação
 
-O sistema deve evitar gerar arquivos corrompidos ou vazios. Caso a exportacao falhe, deve exibir uma mensagem de erro clara para o usuario.
+O sistema deve evitar gerar arquivos corrompidos ou vazios. Caso a exportação falhe, deve exibir uma mensagem de erro clara para o usuário.
 
-### RNF10 - Seguranca e autenticacao
+### RNF10 - Segurança e autenticação
 
-Na primeira versao, o sistema nao precisa exigir login, pois o uso previsto e local e interno. A possibilidade de autenticacao via Microsoft pode ser avaliada em uma fase futura caso o sistema passe a ter distribuicao centralizada, dados sensiveis, historico de uso ou acesso por rede.
+Na primeira versão, o sistema não precisa exigir login, pois o uso previsto é local e interno. A possibilidade de autenticação via Microsoft pode ser avaliada em uma fase futura caso o sistema passe a ter distribuição centralizada, dados sensíveis, histórico de uso ou acesso por rede.
 
-## 11. Regras de negocio
+## 11. Regras de Negócio
 
-### RN01 - Origem das noticias
+### RN01 - Origem das notícias
 
-O sistema deve aceitar links de sites de noticia. A coleta dependera da disponibilidade de metadados na pagina informada.
+O sistema deve aceitar links de sites de notícia. A coleta dependerá da disponibilidade de metadados na página informada.
 
-### RN02 - Geracao somente apos preview
+### RN02 - Geração somente após preview
 
-O usuario deve conseguir revisar a arte em preview antes de baixar a imagem final.
+O usuário deve conseguir revisar a arte em preview antes de baixar a imagem final.
 
-### RN03 - Variacao visual por template
+### RN03 - Variação visual por template
 
-Um mesmo template pode ter variacoes de cor/tema, e o usuario deve poder escolher entre as variacoes disponiveis.
+Um mesmo template pode ter variações de tema, e o usuário deve poder escolher entre as variações disponíveis.
 
-### RN04 - Formatos iniciais de publicacao
+### RN04 - Formatos iniciais de publicação
 
-Na primeira versao, o sistema deve gerar imagens para Instagram nos formatos feed 1080x1440 e story 1080x1920.
+Na primeira versão, o sistema deve gerar imagens para Instagram nos formatos feed 1080x1440 e story 1080x1920.
 
 ### RN05 - Uso interno
 
-O sistema sera utilizado somente por profissionais da redacao.
+O sistema será utilizado somente por profissionais da redação.
 
-### RN06 - Campos obrigatorios
+### RN06 - Campos obrigatórios
 
-Para gerar a imagem, os campos tag, titulo, subtitulo e imagem devem estar preenchidos. Quando o sistema nao conseguir coletar algum desses campos, o usuario deve preencher manualmente antes de gerar a arte.
+Para gerar a imagem, os campos `tag`, título, subtítulo e imagem devem estar preenchidos. Quando o sistema não conseguir coletar algum desses campos, o usuário deve preencher manualmente antes de gerar a arte.
 
 ### RN07 - Templates baseados em HTML
 
-Qualquer template podera ser usado pelo Maker desde que seja implementado em HTML e CSS e siga a estrutura esperada pelo sistema.
+Qualquer template poderá ser usado pelo Maker desde que seja implementado em HTML e CSS e siga a estrutura esperada pelo sistema.
 
 ### RN08 - Nomenclatura do arquivo
 
-As imagens geradas devem seguir o padrao `{formato}-{titulo-em-slug}-{data}.png`.
+As imagens geradas devem seguir o padrão `{formato}-{titulo-em-slug}-{data}.png`.
 
-{formato} - `feed` ou `story`, em minusculo
-{titulo-em-slug} - Titulo da noticia convertido para slug, com limite maximo de 80 caracteres
-{data} - Data em que a imagem foi gerada, no formato `DD-MM-YYYY`
+- `{formato}`: `feed` ou `story`, em minúsculo.
+- `{titulo-em-slug}`: título da notícia convertido para slug, com limite máximo de 80 caracteres.
+- `{data}`: data em que a imagem foi gerada, no formato `DD-MM-YYYY`.
 
-### RN09 - Sem limite automatico de caracteres
+### RN09 - Sem limite automático de caracteres no conteúdo
 
-O sistema nao deve impor limite automatico de caracteres para tag, titulo e subtitulo na primeira versao. O usuario deve verificar no preview se o texto ficou adequado ao layout.
+O sistema não deve impor limite automático de caracteres para `tag`, título e subtítulo na primeira versão. O usuário deve verificar no preview se o texto ficou adequado ao layout.
 
-### RN10 - Geracao de formatos selecionados
+### RN10 - Geração de formatos selecionados
 
-O sistema deve gerar simultaneamente apenas os formatos/layouts selecionados pelo usuario.
+O sistema deve gerar simultaneamente apenas os formatos/layouts selecionados pelo usuário.
 
 ### RN11 - Download separado por imagem
 
-Quando o usuario gerar mais de uma imagem na mesma acao, cada imagem deve ser salva como um arquivo separado, sem compactacao em `.zip` na primeira versao.
+Quando o usuário gerar mais de uma imagem na mesma ação, cada imagem deve ser salva como um arquivo separado, sem compactação em `.zip` na primeira versão.
 
-### RN12 - Pasta padrao de downloads
+### RN12 - Pasta padrão de downloads
 
-Os arquivos gerados devem ser salvos na pasta padrao de downloads do sistema operacional.
+Os arquivos gerados devem ser salvos na pasta padrão de downloads do sistema operacional.
 
-### RN13 - Edicao independente por layout
+### RN13 - Edição independente por layout
 
-Como cada layout pode responder de forma diferente ao mesmo conteudo, o sistema deve permitir ajustes independentes por formato/layout selecionado. Os layouts podem iniciar com os mesmos dados coletados, mas a alteracao feita em um preview nao precisa ser aplicada automaticamente aos demais.
+Como cada layout pode responder de forma diferente ao mesmo conteúdo, o sistema deve permitir ajustes independentes por formato/layout selecionado. Os layouts podem iniciar com os mesmos dados coletados, mas a alteração feita em um preview não precisa ser aplicada automaticamente aos demais.
 
-### RN14 - Temas pre-definidos por template
+### RN14 - Temas pré-definidos por template
 
-As variacoes de cor/tema devem ser pre-definidas pelo proprio template. Cada template pode ter uma quantidade diferente de temas, e o sistema deve permitir que novas variacoes sejam adicionadas com simplicidade.
+As variações de tema devem ser pré-definidas pelo próprio template. Cada template pode ter uma quantidade diferente de temas, e o sistema deve permitir que novas variações sejam adicionadas com simplicidade.
 
-### RN15 - Selecao por card de layout
+### RN15 - Seleção por card de layout
 
-O usuario deve escolher diretamente cards de layout, em vez de escolher primeiro o formato e depois o template. Cada card deve indicar claramente qual template e qual formato serao gerados.
+O usuário deve escolher diretamente cards de layout, em vez de escolher primeiro o formato e depois o template. Cada card deve indicar claramente qual template e qual formato serão gerados.
 
 ### RN16 - Campo tag
 
-O campo usado para representar o chapeu/editoria da noticia deve ser chamado internamente de `tag`.
+O campo usado para representar o chapéu/editoria da notícia deve ser chamado internamente de `tag`.
 
 ### RN17 - Logo fixa por template
 
-A logo deve ser fixa em cada template. Templates diferentes podem possuir logos diferentes, mas o usuario nao precisa trocar a logo manualmente na primeira versao.
+A logo deve ser fixa em cada template. Templates diferentes podem possuir logos diferentes, mas o usuário não precisa trocar a logo manualmente na primeira versão.
 
-### RN18 - Cards sem miniatura obrigatoria
+### RN18 - Cards sem miniatura obrigatória
 
-Os cards de layout nao precisam exibir miniatura previa na primeira versao.
+Os cards de layout não precisam exibir miniatura prévia na primeira versão.
 
-### RN19 - Tag automatica por editoria
+### RN19 - Tag automática por editoria
 
-Quando o site de noticia informar editoria ou categoria, o sistema deve usar essa informacao para preencher automaticamente o campo `tag`.
+Quando o site de notícia informar editoria ou categoria, o sistema deve usar essa informação para preencher automaticamente o campo `tag`.
 
 ### RN20 - Tag pendente
 
-Quando o sistema nao conseguir identificar a editoria ou categoria da noticia, o campo `tag` deve ficar vazio para preenchimento manual.
+Quando o sistema não conseguir identificar a editoria ou categoria da notícia, o campo `tag` deve ficar vazio para preenchimento manual.
 
 ### RN21 - Filtros de layout
 
-Na primeira versao, os filtros de layout devem considerar formato e tema.
+Na primeira versão, os filtros de layout devem considerar formato e tema.
 
 ### RN22 - Card sem miniatura real
 
-Quando o card de layout nao tiver uma miniatura especifica do template, ele deve exibir uma imagem generica com a logo do veiculo definida pelo proprio template.
+Quando o card de layout não tiver uma miniatura específica do template, ele deve exibir uma imagem genérica com a logo do veículo definida pelo próprio template.
 
 ### RN23 - Preview em grid
 
-Os layouts selecionados devem ser exibidos em grid para facilitar comparacao visual entre opcoes.
+Os layouts selecionados devem ser exibidos em grid para facilitar a comparação visual entre opções.
 
-### RN24 - Painel unico de edicao
+### RN24 - Painel único de edição
 
-Os campos editaveis devem ficar em um painel unico, preferencialmente a esquerda, e devem mudar conforme o layout selecionado no grid. O painel pode ser recolhivel.
+Os campos editáveis devem ficar em um painel único, preferencialmente à esquerda, e devem mudar conforme o layout selecionado no grid. O painel pode ser recolhível.
 
-### RN25 - Duplicacao independente
+### RN25 - Duplicação independente
 
-Ao duplicar um layout, o sistema deve criar uma nova instancia independente, permitindo testar variacoes de texto, tema ou imagem sem alterar o layout original.
+Ao duplicar um layout, o sistema deve criar uma nova instância independente, permitindo testar variações de texto, tema ou imagem sem alterar o layout original.
 
-### RN26 - Informacoes do card de layout
+### RN26 - Informações do card de layout
 
-Cada card de layout deve exibir somente nome e formato, alem da imagem generica com a logo do veiculo quando nao houver miniatura especifica.
+Cada card de layout deve exibir somente nome e formato, além da imagem genérica com a logo do veículo quando não houver miniatura específica.
 
-### RN27 - Sem sincronizacao global de edicao
+### RN27 - Sem sincronização global de edição
 
-O sistema nao precisa oferecer uma acao para aplicar o mesmo texto ou imagem em todos os layouts depois que eles ja foram editados separadamente.
+O sistema não precisa oferecer uma ação para aplicar o mesmo texto ou imagem em todos os layouts depois que eles já foram editados separadamente.
 
-### RN28 - Coleta automatica por URL
+### RN28 - Coleta automática por URL
 
-A coleta dos metadados deve ser iniciada automaticamente quando o usuario informar ou colar a URL da noticia.
+A coleta dos metadados deve ser iniciada automaticamente quando o usuário informar ou colar a URL da notícia.
 
-### RN29 - Sem validacao previa de tipo de URL
+### RN29 - Sem validação prévia de tipo de URL
 
-O sistema nao precisa validar previamente se a URL parece ser uma noticia. Ele deve tentar coletar os metadados e informar campos pendentes quando nao conseguir obter os dados necessarios.
+O sistema não precisa validar previamente se a URL parece ser uma notícia. Ele deve tentar coletar os metadados e informar campos pendentes quando não conseguir obter os dados necessários.
 
-### RN30 - Sem persistencia de configuracoes locais
+### RN30 - Sem persistência de configurações locais
 
-Na primeira versao, o sistema nao precisa salvar configuracoes locais, como ultimo tema usado, layouts recentes ou preferencias do usuario.
+Na primeira versão, o sistema não precisa salvar configurações locais, como último tema usado, layouts recentes ou preferências do usuário.
 
 ### RN31 - Mensagem de falha na coleta
 
-Quando a coleta automatica falhar, o sistema deve exibir a mensagem: "Nao foi possivel coletar os dados. Preencha os campos manualmente."
+Quando a coleta automática falhar, o sistema deve exibir a mensagem: `Não foi possível coletar os dados. Preencha os campos manualmente.`
 
-### RN32 - URL invalida sem correcao automatica
+### RN32 - URL inválida sem correção automática
 
-Quando a URL informada tiver espacos ou texto extra, o sistema deve apontar erro e nao deve tentar limpar ou corrigir automaticamente o texto informado.
+Quando a URL informada tiver espaços ou texto extra, o sistema deve apontar erro e não deve tentar limpar ou corrigir automaticamente o texto informado.
 
-### RN33 - Geracao sem URL
+### RN33 - Geração sem URL
 
-O sistema deve permitir gerar imagens sem URL quando o campo de URL estiver vazio, desde que os campos obrigatorios sejam preenchidos manualmente.
+O sistema deve permitir gerar imagens sem URL quando o campo de URL estiver vazio, desde que os campos obrigatórios sejam preenchidos manualmente.
 
-### RN34 - Formulario manual minimo
+### RN34 - Formulário manual mínimo
 
-O formulario manual deve conter apenas os campos obrigatorios da primeira versao: tag, titulo, subtitulo e imagem.
+O formulário manual deve conter apenas os campos obrigatórios da primeira versão: `tag`, título, subtítulo e imagem.
 
-### RN35 - Sem botao de limpar tudo
+### RN35 - Sem botão de limpar tudo
 
-O sistema nao precisa oferecer um botao especifico para limpar todos os campos e recomecar na primeira versao.
+O sistema não precisa oferecer um botão específico para limpar todos os campos e recomeçar na primeira versão.
 
-### RN36 - Selecao de imagem local
+### RN36 - Seleção de imagem local
 
-A imagem local deve ser selecionada pelo explorador de arquivos. O sistema nao precisa aceitar arrastar e soltar imagem na primeira versao.
+A imagem local deve ser selecionada pelo explorador de arquivos. O sistema não precisa aceitar arrastar e soltar imagem na primeira versão.
 
 ### RN37 - Sem recorte manual de imagem
 
-O sistema deve apenas encaixar a imagem no template. Nao precisa oferecer ferramenta de corte ou recorte manual na primeira versao.
+O sistema deve apenas encaixar a imagem no template. Não precisa oferecer ferramenta de corte ou recorte manual na primeira versão.
 
-### RN38 - Exportacao somente em PNG
+### RN38 - Exportação somente em PNG
 
-Na primeira versao, o sistema deve exportar sempre em PNG.
+Na primeira versão, o sistema deve exportar sempre em PNG.
 
-### RN39 - Resolucao exata de saida
+### RN39 - Resolução exata de saída
 
-As imagens geradas devem respeitar exatamente as dimensoes definidas para cada formato: feed 1080x1440 e story 1080x1920.
+As imagens geradas devem respeitar exatamente as dimensões definidas para cada formato: feed 1080x1440 e story 1080x1920.
 
-### RN40 - Sem bloqueio por baixa resolucao da imagem
+### RN40 - Sem bloqueio por baixa resolução da imagem
 
-O sistema nao deve impedir a geracao caso a imagem local tenha baixa resolucao. O usuario deve avaliar o resultado pelo preview.
+O sistema não deve impedir a geração caso a imagem local tenha baixa resolução. O usuário deve avaliar o resultado pelo preview.
 
-### RN41 - Mensagem de sucesso apos download
+### RN41 - Mensagem de sucesso após download
 
-Depois de baixar as imagens, o sistema deve exibir a mensagem "Imagem baixada com sucesso".
+Depois de baixar as imagens, o sistema deve exibir a mensagem `Imagem baixada com sucesso`.
 
 ### RN42 - Slug no nome do arquivo
 
-O titulo usado no nome do arquivo deve ser convertido para slug, removendo acentos, caracteres especiais e espacos.
+O título usado no nome do arquivo deve ser convertido para slug, removendo acentos, caracteres especiais e espaços.
 
 ### RN43 - Limite do slug
 
-O slug do titulo no nome do arquivo deve ter no maximo 80 caracteres para evitar nomes de arquivo muito longos.
+O slug do título no nome do arquivo deve ter no máximo 80 caracteres para evitar nomes de arquivo muito longos.
 
 ### RN44 - Formato da data no arquivo
 
 A data usada no nome do arquivo deve seguir o formato `DD-MM-YYYY`, por exemplo `15-04-2026`.
 
-### RN45 - Formato em minusculo no arquivo
+### RN45 - Formato em minúsculo no arquivo
 
-O formato usado no nome do arquivo deve ser `feed` ou `story`, sempre em minusculo.
+O formato usado no nome do arquivo deve ser `feed` ou `story`, sempre em minúsculo.
 
 ### RN46 - Abrir pasta de downloads
 
-Apos gerar as imagens, o sistema deve permitir abrir a pasta padrao de downloads.
+Após gerar as imagens, o sistema deve permitir abrir a pasta padrão de downloads.
 
-## 12. Dados e metadados
+### RN47 - Configurações via arquivos do projeto
+
+Na primeira versão, as configurações de templates, temas e assets devem vir dos arquivos do projeto, sem uma tela de configuração no aplicativo.
+
+### RN48 - Modo claro e escuro
+
+O aplicativo deve oferecer modo claro e modo escuro para a interface.
+
+### RN49 - Validação campo a campo
+
+Os erros de validação devem aparecer nos campos específicos que precisam de correção.
+
+### RN50 - Sem tutorial interno
+
+Na primeira versão, o sistema não precisa ter área de tutorial, ajuda ou textos explicativos extensos dentro da interface.
+
+### RN51 - Entrada direta na lista de layouts
+
+Ao abrir o aplicativo, o usuário deve ser levado diretamente para a lista de layouts.
+
+## 12. Dados e Metadados
 
 Campos inicialmente previstos:
 
-- URL da noticia.
-- Site de origem da noticia.
+- URL da notícia.
+- Site de origem da notícia.
 - Tag.
-- Titulo.
-- Subtitulo.
+- Título.
+- Subtítulo.
 - Imagem.
 - Editoria/categoria.
 - Autor.
-- Data de publicacao.
+- Data de publicação.
 - Logo.
-- Tema/cor selecionado.
+- Tema selecionado.
 - Caminho ou arquivo local da imagem selecionada manualmente.
 
 Campos a confirmar:
 
-- Tags.
-- Credito da imagem.
+- Crédito da imagem.
 - Texto alternativo da imagem.
-- Data de atualizacao.
+- Data de atualização.
 - Nome do template.
 
 ## 13. Templates
 
-O projeto deve aceitar templates criados em HTML e CSS. A estrutura interna dos templates ainda nao precisa ser fechada, mas cada template deve fornecer ao sistema as informacoes necessarias para ser preenchido e exportado corretamente.
+O projeto deve aceitar templates criados em HTML e CSS. A estrutura interna dos templates ainda não precisa ser fechada, mas cada template deve fornecer ao sistema as informações necessárias para ser preenchido e exportado corretamente.
 
-Informacoes que cada template deve conseguir informar ao sistema:
+Informações que cada template deve conseguir informar ao sistema:
 
 - Nome do template.
-- Formato de saida, como feed ou story.
-- Dimensoes da imagem exportada.
+- Formato de saída, como feed ou story.
+- Dimensões da imagem exportada.
 - Campos que o template utiliza.
-- Campos obrigatorios.
-- Variacoes de tema/cor disponiveis.
-- Forma de aplicar os dados da noticia no layout.
+- Campos obrigatórios.
+- Variações de tema disponíveis.
+- Forma de aplicar os dados da notícia no layout.
 - Logo fixa do template.
-- Fontes e assets necessarios, quando houver.
+- Fontes e assets necessários, quando houver.
 
-Informacoes definidas:
+Informações definidas:
 
 - Quantidade inicial de templates: 5 templates prontos em HTML e CSS.
-- Dimensoes de saida: feed 1080x1440 e story 1080x1920.
-- Campos obrigatorios por template: tag, titulo, subtitulo e imagem.
-- Sem limite automatico de caracteres para tag, titulo e subtitulo.
-- As variacoes de cor/tema devem ser pre-definidas pelo template.
-- Cada template deve definir como os campos do sistema serao aplicados no HTML, sem obrigar uma estrutura tecnica especifica nesta etapa do projeto.
+- Dimensões de saída: feed 1080x1440 e story 1080x1920.
+- Campos obrigatórios por template: `tag`, título, subtítulo e imagem.
+- Sem limite automático de caracteres para `tag`, título e subtítulo.
+- As variações de tema devem ser pré-definidas pelo template.
+- Cada template deve definir como os campos do sistema serão aplicados no HTML, sem obrigar uma estrutura técnica específica nesta etapa do projeto.
+- As configurações dos templates devem vir dos arquivos do projeto.
 
-Informacoes a definir:
+Informações a definir:
 
 - Campos opcionais por template.
-- Lista final de temas disponiveis para cada um dos 5 templates.
+- Lista final de temas disponíveis para cada um dos 5 templates.
 - Uso de marcas, fontes e assets institucionais.
 
-## 14. Nomenclatura dos arquivos
+## 14. Nomenclatura dos Arquivos
 
-Padrao definido:
+Padrão definido:
 
 ```text
 {formato}-{titulo-em-slug}-{data}.png
 ```
 
-## 15. Restricoes e dependencias
+Exemplo:
+
+```text
+feed-minha-noticia-importante-15-04-2026.png
+```
+
+## 15. Restrições e Dependências
 
 - O sistema deve usar `html-to-image` para transformar os templates em PNG.
 - O sistema deve rodar localmente, preferencialmente com Electron.
-- A coleta de metadados depende da estrutura e dos metadados disponiveis nas paginas dos sites de noticia.
-- A execucao local pode exigir tratamento para restricoes de CORS, proxy local ou coleta via backend.
+- A coleta de metadados depende da estrutura e dos metadados disponíveis nas páginas dos sites de notícia.
+- A execução local pode exigir tratamento para restrições de CORS, proxy local ou coleta via backend.
+- A primeira versão deve funcionar em Windows, macOS e Linux.
 
-## 16. Riscos e pontos de atencao
+## 16. Riscos e Pontos de Atenção
 
-- Mudancas no HTML ou nos metadados dos sites de noticia podem quebrar a coleta automatica.
+- Mudanças no HTML ou nos metadados dos sites de notícia podem quebrar a coleta automática.
 - Imagens externas podem ter bloqueios de CORS ao serem renderizadas no canvas.
 - Textos longos podem quebrar o layout dos templates.
-- Diferencas entre navegadores podem afetar a fidelidade da imagem gerada.
-- Fontes externas podem nao carregar corretamente antes da exportacao.
+- Diferenças entre sistemas operacionais podem afetar a fidelidade da imagem gerada.
+- Fontes externas podem não carregar corretamente antes da exportação.
+- Como a imagem local não terá recorte manual, o encaixe pode variar conforme a proporção da imagem.
 
-## 17. Criterios de aceite iniciais
+## 17. Critérios de Aceite Iniciais
 
-- O usuario consegue selecionar layouts por cards na tela inicial.
-- O usuario consegue pesquisar e filtrar cards de layout.
-- O usuario consegue filtrar layouts por formato e tema.
-- O usuario consegue escolher entre feed 1080x1440 e story 1080x1920.
-- O usuario consegue informar uma URL valida de uma noticia.
-- O sistema inicia automaticamente a coleta apos a URL ser informada.
+- O aplicativo abre diretamente na lista de layouts.
+- O usuário consegue selecionar layouts por cards.
+- O usuário consegue pesquisar e filtrar cards de layout.
+- O usuário consegue filtrar layouts por formato e tema.
+- O usuário consegue escolher entre feed 1080x1440 e story 1080x1920.
+- O usuário consegue informar uma URL válida de uma notícia.
+- O sistema inicia automaticamente a coleta após a URL ser informada.
 - O sistema exibe indicador de carregamento durante a coleta.
-- O sistema consegue coletar os principais metadados da noticia.
+- O sistema consegue coletar os principais metadados da notícia.
 - O sistema exibe a mensagem definida quando a coleta falha.
-- O sistema limpa o campo de URL apos erro de coleta.
+- O sistema limpa o campo de URL após erro de coleta.
 - O sistema consegue montar um preview com os dados coletados.
-- O usuario consegue preencher todos os campos manualmente e gerar imagem sem URL.
-- O usuario consegue editar manualmente tag, titulo, subtitulo e imagem.
-- O usuario consegue fazer ajustes independentes por layout selecionado.
+- O usuário consegue preencher todos os campos manualmente e gerar imagem sem URL.
+- O usuário consegue editar manualmente `tag`, título, subtítulo e imagem.
+- O usuário consegue fazer ajustes independentes por layout selecionado.
 - O sistema exibe os previews em grid.
-- O sistema destaca o layout selecionado para edicao.
-- O painel unico de edicao atualiza conforme o layout selecionado.
-- O painel de edicao pode ser recolhido.
-- O usuario consegue duplicar um layout e editar a copia de forma independente.
-- O layout duplicado recebe nome automatico.
-- O usuario consegue remover uma instancia duplicada do grid.
-- O usuario consegue selecionar uma imagem local.
-- A imagem local e selecionada pelo explorador de arquivos.
-- A imagem selecionada e encaixada no template sem recorte manual.
-- O preview e atualizado apos edicoes manuais.
-- O sistema bloqueia a geracao quando algum campo obrigatorio esta vazio.
+- O sistema destaca o layout selecionado para edição.
+- O painel único de edição atualiza conforme o layout selecionado.
+- O painel de edição pode ser recolhido.
+- O usuário consegue duplicar um layout e editar a cópia de forma independente.
+- O layout duplicado recebe nome automático.
+- O usuário consegue remover uma instância duplicada do grid.
+- O usuário consegue selecionar uma imagem local pelo explorador de arquivos.
+- A imagem selecionada é encaixada no template sem recorte manual.
+- O preview é atualizado após edições manuais.
+- O sistema exibe erros de validação campo a campo.
+- O sistema bloqueia a geração quando algum campo obrigatório está vazio.
 - O sistema permite gerar mais de um formato/layout selecionado ao mesmo tempo.
-- O sistema permite desmarcar um layout que nao ficou adequado no preview.
-- O usuario consegue gerar e baixar um arquivo PNG.
-- Quando mais de uma imagem e gerada, o sistema baixa arquivos separados.
-- Os arquivos sao salvos na pasta padrao de downloads.
+- O sistema permite desmarcar um layout que não ficou adequado no preview.
+- O usuário consegue gerar e baixar um arquivo PNG.
+- Quando mais de uma imagem é gerada, o sistema baixa arquivos separados.
+- Os arquivos são salvos na pasta padrão de downloads.
 - O arquivo baixado segue a nomenclatura `{formato}-{titulo-em-slug}-{data}.png`.
 - A data do arquivo segue o formato `DD-MM-YYYY`.
-- O formato do arquivo usa `feed` ou `story` em minusculo.
-- O slug do titulo tem no maximo 80 caracteres.
-- O arquivo gerado sempre esta em PNG.
-- O arquivo gerado respeita exatamente a resolucao do formato selecionado.
-- O sistema nao bloqueia a geracao por baixa resolucao da imagem local.
-- O sistema exibe a mensagem "Imagem baixada com sucesso" apos baixar as imagens.
-- O usuario consegue abrir a pasta de downloads apos gerar as imagens.
-- O sistema informa erro quando a URL e invalida ou quando os dados nao podem ser coletados.
+- O formato do arquivo usa `feed` ou `story` em minúsculo.
+- O slug do título tem no máximo 80 caracteres.
+- O arquivo gerado sempre está em PNG.
+- O arquivo gerado respeita exatamente a resolução do formato selecionado.
+- O sistema não bloqueia a geração por baixa resolução da imagem local.
+- O sistema exibe a mensagem `Imagem baixada com sucesso` após baixar as imagens.
+- O usuário consegue abrir a pasta de downloads após gerar as imagens.
+- O sistema permite alternar entre modo claro e modo escuro.
+- Templates, temas e assets podem ser configurados pelos arquivos do projeto.
+- O sistema informa erro quando a URL é inválida ou quando os dados não podem ser coletados.
 
-## 18. Referencias do professor
+## 18. Referências do Professor
 
-Orientacoes recebidas:
+Orientações recebidas:
 
-- Requisitos nao funcionais nao descrevem necessariamente uma funcionalidade do sistema.
-- Requisitos nao funcionais podem tratar de desempenho, acessibilidade, seguranca, usabilidade, compatibilidade e qualidade.
-- O documento deve descrever as funcionalidades, identificar quem vai usar, como vai usar e quais sao os atores envolvidos.
+- Requisitos não funcionais não descrevem necessariamente uma funcionalidade do sistema.
+- Requisitos não funcionais podem tratar de desempenho, acessibilidade, segurança, usabilidade, compatibilidade e qualidade.
+- O documento deve descrever as funcionalidades, identificar quem vai usar, como vai usar e quais são os atores envolvidos.
 
-Imagens/modelo classico: a anexar ou descrever.
+Imagens/modelo clássico: a anexar ou descrever.
 
-## 19. Perguntas em aberto
+## 19. Perguntas em Aberto
 
-1. Quais navegadores precisam ser oficialmente suportados caso exista versao web alem do Electron?
-2. A primeira versao precisa ter tela de configuracao ou tudo pode vir definido nos arquivos do projeto?
-3. O aplicativo deve ter modo claro/escuro proprio ou seguir apenas a interface definida?
-4. O sistema deve exibir erros de validacao campo a campo ou apenas uma mensagem geral?
-5. O sistema precisa ter algum tutorial, ajuda ou texto explicativo dentro da interface?
+1. Quais navegadores precisam ser oficialmente suportados caso exista uma versão web além do Electron?
+2. O modo claro/escuro deve seguir a preferência do sistema operacional ou ser escolhido manualmente pelo usuário?
+3. Quais campos opcionais cada template pode usar além de `tag`, título, subtítulo e imagem?
+4. Quais temas estarão disponíveis em cada um dos 5 templates iniciais?
+5. Como os templates serão organizados dentro dos arquivos do projeto?
